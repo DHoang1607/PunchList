@@ -5,7 +5,6 @@
 <div class="punchList-search-result">
     <div class="list-group">
         <a *ngFor="let punchList of punchLists" 
-        [routerLink] = "['/punchList']" [queryParams]="{discipline: punchList.discipline, state: punchList.status}"
         [class.selected]="punchList === selectedPunchList"
         (click)="onSelect(punchList)"
         href="javascript:void(0);" class="list-group-item list-group-item-action">
