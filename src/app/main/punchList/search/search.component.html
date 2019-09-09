@@ -1,0 +1,20 @@
+<div>
+    <a href="javascript:void(0);" (click)="goPrevNext('prev')"><i class="fa fa-angle-left prevButton"></i></a>
+    <a href="javascript:void(0);" (click)="goPrevNext('next')"><i class="fa fa-angle-right nextButton"></i></a>
+</div>
+<div class="punchList-search-result">
+    <div class="list-group">
+        <a *ngFor="let punchList of punchLists" 
+        [routerLink] = "['/punchList']" [queryParams]="{discipline: punchList.discipline, state: punchList.status}"
+        [class.selected]="punchList === selectedPunchList"
+        (click)="onSelect(punchList)"
+        href="javascript:void(0);" class="list-group-item list-group-item-action">
+        <div class="row">
+            <div class="col-sm-8"><h6>{{punchList.site}}</h6></div>
+            <div class="col-sm-4" ><small>{{punchList.discipline}} / {{punchList.status}}</small></div>
+        </div>
+        </a>
+    </div>
+</div>
+
+       

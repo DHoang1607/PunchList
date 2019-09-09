@@ -1,0 +1,8 @@
+<agm-map [latitude]="centerLat" [longitude]="centerLng">
+    <agm-marker 
+        *ngFor="let punchList of punchLists" 
+        (markerClick)="clickedMarker(punchList.lat, punchList.lng)"
+        [latitude]="punchList.lat" 
+        [longitude]="punchList.lng">
+    </agm-marker>
+</agm-map>
